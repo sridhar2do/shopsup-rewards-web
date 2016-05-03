@@ -11,7 +11,14 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'engine\controllers',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'account' => [
+            'class' => 'app\modules\account\Module',
+        ],
+        'configuration' => [
+            'class' => 'app\modules\configuration\Module',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
