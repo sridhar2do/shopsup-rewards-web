@@ -2,8 +2,7 @@
 
 namespace engine\modules\configuration\models;
 
-use common\utils\StringUtils;
-use engine\modules\configuration\models\ConfOptionBase;
+use engine\utils\FormatUtils;
 
 /**
  * This is the model class for table "mst_tag".
@@ -19,6 +18,6 @@ class ConfOption extends ConfOptionBase
 
     public function getValue()
     {
-        return StringUtils::formatOutput($this->value);
+        return FormatUtils::getForOutput($this->value);
     }
 }
