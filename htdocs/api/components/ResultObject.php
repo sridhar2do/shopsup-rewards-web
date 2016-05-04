@@ -2,8 +2,8 @@
 
 namespace api\components;
 
-use common\constants\APICodes;
-use common\constants\APIMessages;
+use api\components\APICodes;
+use api\components\APIMessages;
 use yii\base\Arrayable;
 
 class ResultObject implements Arrayable {
