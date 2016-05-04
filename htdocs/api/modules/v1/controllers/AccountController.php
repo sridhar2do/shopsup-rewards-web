@@ -9,10 +9,8 @@ namespace app\modules\v1\controllers;
 use api\components\RestController;
 use api\components\ResultObject;
 use engine\components\BaseException;
-use engine\modules\account\models\AccUser;
 use engine\modules\account\services\AccessService;
 use engine\modules\account\services\AccountService;
-use engine\modules\account\services\OTPService;
 use engine\modules\account\services\ProfileService;
 use yii\web\HttpException;
 
@@ -44,6 +42,8 @@ class AccountController extends RestController
 
     public function actionRegisterSupplier($email = null, $mobile = null, $password)
     {
+
+
 
         if (empty($mobile) && empty($email)) {
             throw new HttpException(400, "Either email or mobile is mandatory");
