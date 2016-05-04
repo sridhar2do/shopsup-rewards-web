@@ -6,9 +6,7 @@
  */
 namespace api\components;
 
-use common\constants\APICodes;
 use yii\base\Arrayable;
-use common\constants\APIMessages;
 
 /**
  * This is the object that sends validation errors in the model.

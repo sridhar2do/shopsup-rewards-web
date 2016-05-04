@@ -8,12 +8,12 @@ namespace app\modules\v1\controllers;
 
 use api\components\RestController;
 use api\components\ResultObject;
-use core\common\BaseException;
-use core\modules\account\models\AccUser;
-use core\modules\account\services\AccessService;
-use core\modules\account\services\AccountService;
-use core\modules\account\services\OTPService;
-use core\modules\account\services\ProfileService;
+use engine\components\BaseException;
+use engine\modules\account\models\AccUser;
+use engine\modules\account\services\AccessService;
+use engine\modules\account\services\AccountService;
+use engine\modules\account\services\OTPService;
+use engine\modules\account\services\ProfileService;
 use yii\web\HttpException;
 
 

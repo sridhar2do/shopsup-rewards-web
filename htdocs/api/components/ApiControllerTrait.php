@@ -7,16 +7,14 @@
 namespace api\components;
 
 use api\components\ErrorResponse;
-use common\constants\APICodes;
-use common\constants\APIMessages;
-use core\common\BaseActiveRecord;
-use core\modules\account\services\AccountService;
-use core\modules\analytics\components\DeviceTrackerBehavior;
-use core\modules\analytics\components\LocatorBehavior;
+use engine\components\BaseActiveRecord;
+use engine\components\BaseException;
+use engine\modules\account\services\AccountService;
+use engine\modules\analytics\components\DeviceTrackerBehavior;
+use engine\modules\analytics\components\LocatorBehavior;
 use yii\filters\ContentNegotiator;
 use yii\web\Response;
 use yii\web\UnauthorizedHttpException;
-use core\common\BaseException;
 
 /**
  * This is a trait object that is used by all API Controllers.
@@ -66,7 +64,7 @@ trait ApiControllerTrait {
 	 * @param array $data        	
 	 * @param string $message        	
 	 * @param integer $code        	
-	 * @return \api\common\ErrorResponse
+	 * @return \api\components\ErrorResponse
 	 */
 	public function sendModelErrors($model, $data = [], $message = APIMessages::ERROR_DATA_VALIDATION, $code = APICodes::ERROR_DATA_VALIDATION) {
 		if (is_array ( $model )) {

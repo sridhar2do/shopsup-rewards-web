@@ -8,18 +8,10 @@ namespace app\modules\v1\controllers;
 
 use api\components\RestController;
 use api\components\ResultObject;
-use core\common\BaseException;
-use core\modules\account\services\AccountService;
-use core\modules\account\services\SessionService;
+use engine\components\BaseException;
+use engine\modules\account\services\SessionService;
 use yii\web\HttpException;
 
-
-/*
-
-POST session
-DELETE session
-
-*/
 
 class SessionController extends RestController
 {
