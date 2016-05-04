@@ -54,7 +54,7 @@ class AccUser extends AccUserBase
     public function isMobileVerified()
     {
         $status = $this->is_verified;
-        if (count($status) < 1) {
+        if (strlen($status) < 1) {
             return false;
         }
 
@@ -69,7 +69,7 @@ class AccUser extends AccUserBase
     public function isEmailVerified()
     {
         $status = $this->is_verified;
-        if (count($status) < 2) {
+        if (strlen($status) < 2) {
             return false;
         }
 
