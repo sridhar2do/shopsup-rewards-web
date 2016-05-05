@@ -7,7 +7,7 @@
 namespace app\modules\v1\controllers;
 
 use api\components\RestController;
-use core\services\SettingService;
+use engine\modules\configuration\services\SettingService;
 use yii\web\HttpException;
 
 class ConfigController extends RestController

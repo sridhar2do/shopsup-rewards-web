@@ -20,7 +20,7 @@ class ConfSettingBase extends BaseActiveRecord
      */
     public static function tableName()
     {
-        return 'setting';
+        return 'conf_setting';
     }
 
     /**
