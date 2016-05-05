@@ -42,6 +42,9 @@ return [
                 'POST v1/password/token'=>'v1/account/get-password-reset-key',
                 'PUT v1/password/update'=>'v1/account/update-password-reset-key',
 
+                'GET v1/config' => 'v1/config/get-for-mobile',
+                'GET v1/config/all' => 'v1/config/get-all-for-mobile',
+
             ],
         ],
         'request' => [
