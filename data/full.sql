@@ -627,3 +627,59 @@ ADD CONSTRAINT `acc_user_session_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `acc
 --
 ALTER TABLE `conf_location`
 ADD CONSTRAINT `conf_location_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `conf_option` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `conf_category`
+--
+
+CREATE TABLE IF NOT EXISTS `conf_category` (
+`id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `icon` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `conf_subcategory`
+--
+
+CREATE TABLE IF NOT EXISTS `conf_subcategory` (
+`id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `sub_category_id` int(11) NOT NULL,
+  `ranking` int(3) NOT NULL DEFAULT '999'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `conf_category`
+--
+ALTER TABLE `conf_category`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `conf_subcategory`
+--
+ALTER TABLE `conf_subcategory`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `conf_category`
+--
+ALTER TABLE `conf_category`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `conf_subcategory`
+--
+ALTER TABLE `conf_subcategory`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
