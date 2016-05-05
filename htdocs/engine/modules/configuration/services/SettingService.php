@@ -4,7 +4,7 @@
  * @author Karthick Loganathan
  * @copyright Copyright (c) 2016 Hyperkonnect Technologies Private Limited
  */
-namespace core\services;
+namespace engine\modules\configuration\services;
 use engine\components\BaseService;
 use engine\modules\configuration\models\ConfSetting;
 
@@ -36,11 +36,11 @@ class SettingService extends BaseService {
 	}
 	
 	public function getSettingForMobile($key) {
-		return $this->getSetting($key, Setting::PLATFORM_MOBILE);
+		return $this->getSetting($key, ConfSetting::PLATFORM_MOBILE);
 	}
 
 	public function getSettingForWeb($key) {
-		return $this->getSetting($key, Setting::PLATFORM_WEB);
+		return $this->getSetting($key, ConfSetting::PLATFORM_WEB);
 	}
 	
 	public function getSetting($key, $platform = false) {
