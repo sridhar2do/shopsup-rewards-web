@@ -26,4 +26,17 @@ class ConfigController extends RestController
         }
         return $result;
     }
+
+    public function actionGetAllCategories() {
+
+        $result = SettingService::model()->getAllCategories();
+
+        return $result;
+    }
+
+    public function actionGetAllSubcategories() {
+
+        $result = SettingService::model()->getAllSubcategories();
+        return $result;
+    }
 }

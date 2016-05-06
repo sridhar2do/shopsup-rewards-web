@@ -11,6 +11,9 @@ use Yii;
  * @property integer $category_id
  * @property integer $sub_category_id
  * @property integer $ranking
+ *
+ * @property ConfCategory $category
+ * @property ConfCategory $subCategory
  */
 class ConfSubcategoryBase extends \engine\components\BaseActiveRecord
 {
@@ -30,6 +33,8 @@ class ConfSubcategoryBase extends \engine\components\BaseActiveRecord
         return [
             [['category_id', 'sub_category_id'], 'required'],
             [['category_id', 'sub_category_id', 'ranking'], 'integer'],
+            [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => ConfCategory::className(), 'targetAttribute' => ['category_id' => 'id']],
+            [['sub_category_id'], 'exist', 'skipOnError' => true, 'targetClass' => ConfCategory::className(), 'targetAttribute' => ['sub_category_id' => 'id']],
         ];
     }
 
@@ -44,5 +49,21 @@ class ConfSubcategoryBase extends \engine\components\BaseActiveRecord
             'sub_category_id' => 'Sub Category ID',
             'ranking' => 'Ranking',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCategory()
+    {
+        return $this->hasOne(ConfCategory::className(), ['id' => 'category_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getSubCategory()
+    {
+        return $this->hasOne(ConfCategory::className(), ['id' => 'sub_category_id']);
     }
 }

@@ -5,8 +5,11 @@
  * @copyright Copyright (c) 2016 Hyperkonnect Technologies Private Limited
  */
 namespace engine\modules\configuration\services;
+
 use engine\components\BaseService;
+use engine\modules\configuration\models\ConfCategory;
 use engine\modules\configuration\models\ConfSetting;
+use engine\modules\configuration\models\ConfSubcategory;
 
 
 /**
@@ -63,5 +66,21 @@ class SettingService extends BaseService {
 		}
 		
 		return false;
+	}
+
+	public function getAllCategories() {
+		$result = [ ];
+		$result = ConfCategory::find()->all();
+
+		return $result;
+	}
+
+	public function getAllSubcategories() {
+		$result = [ ];
+//		$result = ConfSubcategory::find()->all();
+
+		$result = ConfSubcategory::find()->all();
+
+		return $result;
 	}
 }

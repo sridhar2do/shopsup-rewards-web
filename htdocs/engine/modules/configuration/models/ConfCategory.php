@@ -7,5 +7,13 @@ namespace engine\modules\configuration\models;
  */
 class ConfCategory extends ConfCategoryBase
 {
+
+    public function fields() {
+        $fields = parent::fields();
+        $fields["sub"] = "confSubcategories";
+//        var_dump($fields); die();
+
+        return $fields;
+    }
     
 }
