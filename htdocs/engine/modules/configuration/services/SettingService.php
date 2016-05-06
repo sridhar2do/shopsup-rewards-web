@@ -10,6 +10,7 @@ use engine\components\BaseService;
 use engine\modules\configuration\models\ConfCategory;
 use engine\modules\configuration\models\ConfSetting;
 use engine\modules\configuration\models\ConfSubcategory;
+use engine\modules\configuration\models\RewActivity;
 
 
 /**
@@ -69,17 +70,9 @@ class SettingService extends BaseService {
 	}
 
 	public function getAllCategories() {
-		$result = [ ];
-		$result = ConfCategory::find()->all();
-
-		return $result;
-	}
-
-	public function getAllSubcategories() {
-		$result = [ ];
-//		$result = ConfSubcategory::find()->all();
-
-		$result = ConfSubcategory::find()->all();
+		$result = [];
+		$result['activities'] = RewActivity::find()->all();
+		$result['categories'] = ConfCategory::find()->all();
 
 		return $result;
 	}

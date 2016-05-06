@@ -45,7 +45,6 @@ return [
                 'GET v1/config' => 'v1/config/get-for-mobile',
                 'GET v1/config/all' => 'v1/config/get-all-for-mobile',
                 'GET v1/config/categories' => 'v1/config/get-all-categories',
-                'GET v1/config/subcategories' => 'v1/config/get-all-subcategories',
 
             ],
         ],
